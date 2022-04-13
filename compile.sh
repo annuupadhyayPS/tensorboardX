@@ -21,6 +21,8 @@ if [ -z ${PROTOC_BIN} ] || [[ "$CURRENT_PROTOC_VER" != "libprotoc "$DESIRED_PROT
   # Download and use the latest version of protoc.
   if [ "$(uname)" == "Darwin" ]; then
     PROTOC_ZIP="protoc-"$DESIRED_PROTO_VERSION"-osx-x86_64.zip"
+  elif [ "${TRAVIS_CPU_ARCH}" == "arm64" ]; then
+    PROTOC_ZIP="protoc-"$DESIRED_PROTO_VERSION"-linux-aarch_64.zip"  
   else
     PROTOC_ZIP="protoc-"$DESIRED_PROTO_VERSION"-linux-x86_64.zip"
   fi
