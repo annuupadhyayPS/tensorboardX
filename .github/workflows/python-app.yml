@@ -72,5 +72,5 @@ jobs:
            flake8 tensorboardX --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics && \
            python -m pip install --upgrade protobuf && \
            visdom &
-           pytest --cov=tensorboardX tests/'  
+           python -m pytest --cov=tensorboardX tests/'  
   
